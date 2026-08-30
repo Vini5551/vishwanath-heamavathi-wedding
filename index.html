@@ -173,7 +173,7 @@ linear-gradient(#450b08cc,#450b08cc),radial-gradient(circle at 50% 20%,#b64b25,#
 
 <script>
 const enter=document.getElementById('enter'), btn=document.getElementById('enterBtn');
-btn.addEventListener('click',()=>enter.classList.add('hide'));
+btn.addEventListener('click',async()=>{enter.classList.add('hide');try{await audio.play();playing=true;music.textContent='❚❚'}catch(e){console.log('Music could not start:',e)}});
 const lang=document.getElementById('lang');
 lang.addEventListener('click',()=>{document.body.classList.toggle('telugu');lang.textContent=document.body.classList.contains('telugu')?'English':'తెలుగు'});
 const target=new Date('2026-09-05T04:00:00+05:30').getTime();
